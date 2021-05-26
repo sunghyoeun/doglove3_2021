@@ -23,7 +23,7 @@ module.exports = {
     script : [
       {
         defer:"",
-        src:"https://user.fontawesome.com/releases/v5.15.3/js/all.js"
+        src:"https://use.fontawesome.com/releases/v5.15.3/js/all.js"
       }
     ]
   },
