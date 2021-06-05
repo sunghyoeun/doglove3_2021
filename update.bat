@@ -1,3 +1,3 @@
 git add --all
-git commit -m "add table for info"
+git commit -m "create campNames.vue"
 git push -u origin master

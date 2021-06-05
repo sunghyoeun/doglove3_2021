@@ -2,7 +2,8 @@
   <div>
     <nav class="breadcrumb">
       <ul>
-        <li><nuxt-link to="/"><i class="fas fa-home"></i>홈으로</nuxt-link></li>
+        <li><nuxt-link to="/"><i class="fas fa-home"></i>&nbsp;홈으로</nuxt-link></li>
+        <li><nuxt-link to="/campNames"><i class ="fas fa-file-signature"></i>&nbsp;캠핑장과 캠핑카</nuxt-link></li>
       </ul>
     </nav>
     <nuxt/> 
