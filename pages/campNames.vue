@@ -3,24 +3,78 @@
         <section class = "hero is-link">
             <div class="hero-body">
                 <p class="title">
-                    <i class="fas fa-campground"></i>캠핑장과   
-                    <i class="fas fa-caravan"></i>캠핑 카
+                    <i class="fas fa-umbrella-beach"></i>바다 캠핑과    
+                    <i class="fas fa-mountain"></i>산 캠핑
                 </p>
                 <p class ="subtitle">
-                    여러분의 캠핑을 골라주세요.
+                    어디로 캠핑을 가고 싶나요!
                 </p>
             </div>
         </section>
-        <section class = "">
-            <div class="">
-                <p class="title">
-                    <i class=""></i>
-                    <i class=""></i>
-                </p>
-                <p class ="subtitle">
-
-                </p>
+        <section class = "columns">
+            <div class="column">
+               <table class = "table is-striped is-hoverable is-fullwidth">
+                   <thead>
+                       <tr>
+                           <th>번호</th>
+                           <th>바다 캠핑장</th>
+                       </tr>
+                   </thead>
+                   <tbody>
+                    <template v-for="pos in tablebeachcamp.length">
+                        <tr :key="pos">
+                            <td>{{ pos }}</td>
+                            <td>{{ tablebeachcamp[pos - 1] }}</td>
+                        </tr>
+                    </template>
+                        
+                   </tbody>
+               </table>
+               <div class="content">
+                   <span class="tag is-danger">출처</span> <a href="">naver 검색</a>
+                </div>
             </div>
-        </section>
+            <div class="column">
+                <section class = "columns">
+                    <div class="column">
+                       <table class = "table is-striped is-hoverable is-fullwidth">
+                           <thead>
+                               <tr>
+                                   <th>번호</th>
+                                   <th>산 캠핑장</th>
+                               </tr>
+                           </thead>
+                           <tbody>
+                            <template v-for="pos in tablemountaincamp.length">
+                                <tr :key="pos">
+                                    <td>{{ pos }}</td>
+                                    <td>{{ tablemountaincamp[pos - 1] }}</td>
+                                </tr>
+                            </template>
+                           </tbody>
+                       </table>
+                       <div class="content">
+                        <span class="tag is-danger">출처</span> <a href="">naver 검색</a>
+                     </div>
+                    </div>
+                    <div class="column">
+                       
+                    </div>
+                </section>
+            </div>
+        </section>        
     </div>
 </template>
+
+<script>
+    import beachcamp from "~/assets/beachcamp.json";
+    import mountaincamp from "~/assets/mountaincamp.json";
+    export default {
+        data() {
+            return {
+                tablebeachcamp: beachcamp.names,
+                tablemountaincamp: mountaincamp.names
+            };
+        }
+    };
+</script>
