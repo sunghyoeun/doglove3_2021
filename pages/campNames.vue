@@ -31,7 +31,7 @@
                    </tbody>
                </table>
                <div class="content">
-                   <span class="tag is-danger">출처</span> <a href="">naver 검색</a>
+                   <span class="tag is-danger">출처</span> <a href="http://naver.com">naver 검색</a>
                 </div>
                 <div class="content">
                     <span class="tag is-warning">JSON</span>
@@ -58,7 +58,7 @@
                            </tbody>
                        </table>
                        <div class="content">
-                        <span class="tag is-danger">출처</span> <a href="">naver 검색</a>
+                        <span class="tag is-danger">출처</span> <a href="http://naver.com">naver 검색</a>
                      </div>
                      <div class="content">
                          <span class="tag is-warning">JSON</span>
