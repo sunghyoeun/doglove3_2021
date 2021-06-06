@@ -33,6 +33,10 @@
                <div class="content">
                    <span class="tag is-danger">출처</span> <a href="">naver 검색</a>
                 </div>
+                <div class="content">
+                    <span class="tag is-warning">JSON</span>
+                    <a href="/beachcamp.json">바다 캠핑장 JSON</a>
+                </div>
             </div>
             <div class="column">
                 <section class = "columns">
@@ -56,6 +60,10 @@
                        <div class="content">
                         <span class="tag is-danger">출처</span> <a href="">naver 검색</a>
                      </div>
+                     <div class="content">
+                         <span class="tag is-warning">JSON</span>
+                         <a href="/mountaincamp.json">산 캠핑장을 위한 JSON</a>
+                     </div>
                     </div>
                     <div class="column">
                        
@@ -67,8 +75,8 @@
 </template>
 
 <script>
-    import beachcamp from "~/assets/beachcamp.json";
-    import mountaincamp from "~/assets/mountaincamp.json";
+    import beachcamp from "~/static/beachcamp.json";
+    import mountaincamp from "~/static/mountaincamp.json";
     export default {
         data() {
             return {
