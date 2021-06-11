@@ -4,7 +4,7 @@
       <ul>
         <li><nuxt-link to="/"><i class="fas fa-home"></i>&nbsp;홈으로</nuxt-link></li>
         <li><nuxt-link to="/campNames"><i class ="fas fa-file-signature"></i>&nbsp;캠핑장</nuxt-link></li>
-        <li><nuxt-link to="/foodNames"><i class ="fas fa-utensils"></i>&nbsp;캠핑 음식 </nuxt-link></li>
+        <li><nuxt-link to="/AnimalNames"><i class ="fas fa-utensils"></i>&nbsp;위험 동물 </nuxt-link></li>
       </ul>
     </nav>
     <nuxt/> 
