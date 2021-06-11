@@ -3,10 +3,10 @@
         <section class = "hero is-warning">
             <div class="hero-body">
                 <p class = "title">
-                    <i class = "fas fa-exclamation-triangle"></i>캠핑장 출몰 가능 동물
+                    <i class = "fas fa-exclamation-triangle"></i>캠핑장 위험요소
                 </p>
                 <p class="subtitle">
-                    캠핑장에 나타날수 있는 동물
+                    캠핑장에서의 위험요소
                 </p>
             </div>
         </section>
