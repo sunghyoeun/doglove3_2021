@@ -49,6 +49,7 @@ module.exports = {
         })
       }
     }
-  }
+  },
+  plugins: [{src: '~/plugins/firebaseDb.js'}],
 }
 
