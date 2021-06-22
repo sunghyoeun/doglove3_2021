@@ -19,8 +19,8 @@
                     <tbody>
                         <template v-for="pos in content.length">
                             <tr :key="pos">
-                                <td style="width: 10cm;"><img v-bind:src = photo[pos-1]></td>
-                                <td style="text-align: left; "><strong>{{content[pos - 1]}}</strong></td>
+                                <td style="width: 6cm;"><img v-bind:src = photo[pos-1]></td>
+                                <td><a v-bind:href = 'link[pos -1]'>{{content[pos-1]}}</a></td>
                             </tr>
                         </template>
                        </tbody>
@@ -30,7 +30,7 @@
                 </div>
                 <div class="content">
                     <span class="tag is-warning">JSON</span>
-                    <a href="/beachcamp.json">바다 캠핑장 JSON</a>
+                    <a href="/beachcamp.json">:class="`button ${colors[(pos - 1) % colorSize]} is-light`" </a>
                 </div>
             </div>
             <div style="width: 10%;"></div>
@@ -42,10 +42,13 @@
     import photojson from "~/static/photo.json";
     export default {
         data() {
-            return {
+            
+			return {
+				
                 photo: photojson.images,
-                content: photojson.names
-            };
+                content: photojson.names,
+                link: photojson.link
+			};
         }
     };
 </script>

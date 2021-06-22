@@ -11,15 +11,26 @@
         "/9.png"
     ],
     "names":[
-        "질식사고",
-        "독사· 벌",
-        "발열·두통·설사 등",
-        "눈에 부유물질 들어감",
-        "골절",
-        "베임",
+        "질식",
+        "독사와 벌",
+        "발열과 두통",
+        "눈의 부상",
+        "골절과 염좌",
+        "절상과 자상",
         "화상사고",
-        "수상사고",
-        "응급상자 사용 법" 
+        "수상 안전사고",
+        "구급상자" 
+    ],
+    "link":[
+        "https://www.gocamping.or.kr/zboard/read.do?searchWrd=&pageIndex=1&lmCode=campSafe&searchCnd=&searchCate1=&pd_pkid=265",
+        "https://www.gocamping.or.kr/zboard/read.do?searchWrd=&pageIndex=1&lmCode=campSafe&searchCnd=&searchCate1=&pd_pkid=264",
+        "https://www.gocamping.or.kr/zboard/read.do?searchWrd=&pageIndex=1&lmCode=campSafe&searchCnd=&searchCate1=&pd_pkid=263",
+        "https://www.gocamping.or.kr/zboard/read.do?searchWrd=&pageIndex=1&lmCode=campSafe&searchCnd=&searchCate1=&pd_pkid=262",
+        "https://www.gocamping.or.kr/zboard/read.do?searchWrd=&pageIndex=1&lmCode=campSafe&searchCnd=&searchCate1=&pd_pkid=261",
+        "https://www.gocamping.or.kr/zboard/read.do?searchWrd=&pageIndex=1&lmCode=campSafe&searchCnd=&searchCate1=&pd_pkid=260",
+        "https://www.gocamping.or.kr/zboard/read.do?searchWrd=&pageIndex=1&lmCode=campSafe&searchCnd=&searchCate1=&pd_pkid=258",
+        "https://www.gocamping.or.kr/zboard/read.do?searchWrd=&pageIndex=1&lmCode=campSafe&searchCnd=&searchCate1=&pd_pkid=266",
+        "https://www.gocamping.or.kr/zboard/read.do?searchWrd=&pageIndex=1&lmCode=campSafe&searchCnd=&searchCate1=&pd_pkid=267"
     ]
 }
 

@@ -46,8 +46,7 @@
 							</tr>
 						</template>
 					</tbody>
-				</table>
-				
+				</table>				
 				<section class="notification is-info is-light">
 					<p class="tag is-danger">출처</p>
                     <a href="https://www.gocamping.or.kr/">한국관광공사 고캠핑</a>
