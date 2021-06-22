@@ -1,88 +1,112 @@
 <template>
-    <div>
-        <section class = "hero is-link">
-            <div class="hero-body">
-                <p class="title">
-                    <i class="fas fa-umbrella-beach"></i>바다 캠핑과    
-                    <i class="fas fa-mountain"></i>산 캠핑
-                </p>
-                <p class ="subtitle">
-                    어디로 캠핑을 가고 싶나요!
-                </p>
-            </div>
-        </section>
-        <section class = "columns">
-            <div class="column">
-               <table class = "table is-striped is-hoverable is-fullwidth">
-                   <thead>
-                       <tr>
-                           <th>번호</th>
-                           <th>바다 캠핑장</th>
-                       </tr>
-                   </thead>
-                   <tbody>
-                    <template v-for="pos in tablebeachcamp.length">
-                        <tr :key="pos">
-                            <td>{{ pos }}</td>
-                            <td>{{ tablebeachcamp[pos - 1] }}</td>
-                        </tr>
-                    </template>
-                        
-                   </tbody>
-               </table>
-               <div class="content">
-                   <span class="tag is-danger">출처</span> <a href="http://naver.com">naver 검색</a>
-                </div>
-                <div class="content">
-                    <span class="tag is-warning">JSON</span>
-                    <a href="/beachcamp.json">바다 캠핑장 JSON</a>
-                </div>
-            </div>
-            <div class="column">
-                <section class = "columns">
-                    <div class="column">
-                       <table class = "table is-striped is-hoverable is-fullwidth">
-                           <thead>
-                               <tr>
-                                   <th>번호</th>
-                                   <th>산 캠핑장</th>
-                               </tr>
-                           </thead>
-                           <tbody>
-                            <template v-for="pos in tablemountaincamp.length">
-                                <tr :key="pos">
-                                    <td>{{ pos }}</td>
-                                    <td>{{ tablemountaincamp[pos - 1] }}</td>
-                                </tr>
-                            </template>
-                           </tbody>
-                       </table>
-                       <div class="content">
-                        <span class="tag is-danger">출처</span> <a href="http://naver.com">naver 검색</a>
-                     </div>
-                     <div class="content">
-                         <span class="tag is-warning">JSON</span>
-                         <a href="/mountaincamp.json">산 캠핑장을 위한 JSON</a>
-                     </div>
-                    </div>
-                    <div class="column">
-                       
-                    </div>
-                </section>
-            </div>
-        </section>        
-    </div>
+	<div>
+		<section class="hero is-light">
+			<div class="hero-body">
+				<p class="title" style="text-align: center;"><i class="fas fa-dog"></i> 이달의 추천 캠핑장</p>
+				<p class="subtile" style="text-align: center;">
+					외부 서비스인 Firebase가 함께 합니다.
+				</p>
+			</div>
+		</section>
+		<hr />
+		<section class="box" style="text-align: center;">
+			<form @submit.prevent="submitDogName">
+				<div class="field">
+					<label class="label">추천하고 싶은 캠핑장</label>
+					<div class="control">
+						<input style="width: 6cm; height: 0.8;"  type="text" v-model="newDogName" />
+						<button class="button is-link" type="submit" >추천</button>
+					</div>
+					<p class="help is-success">
+						캠핑장  Firebase에 소개할 이름을 입력하세요.
+					</p>
+				</div>
+			</form>
+		</section>
+		<section class="columns" >
+			<div style="width: 10%;"></div>
+			<div class="column" style="text-align: center;">
+				<div class="field">
+					<label class="checkbox">
+						<input type="checkbox" v-model="dogSort" @change="sortDogNames" /> 이달의 캠핑 <strong>정렬하기</strong>
+					</label>
+				</div>
+				<table class="table is-striped is-hoverable is-fullwidth">
+					<thead>
+						<tr>
+							<th>번호</th>
+							<th>장소</th>
+						</tr>
+					</thead>
+					<tbody>
+						<template v-for="pos in dogNamesSort.length">
+							<tr :key="pos">
+								<td>{{ pos }}</td>
+								<td>{{ dogNamesSort[pos - 1] }}</td>
+							</tr>
+						</template>
+					</tbody>
+				</table>
+				
+				<section class="notification is-info is-light">
+					<p class="tag is-danger">출처</p>
+                    <a href="https://www.gocamping.or.kr/">한국관광공사 고캠핑</a>
+				</section>
+			</div>
+			<div style="width: 10%;"></div>
+		</section>        
+	</div>
 </template>
-
 <script>
+	import fbDb from '~/plugins/firebaseDb';
     import beachcamp from "~/static/beachcamp.json";
     import mountaincamp from "~/static/mountaincamp.json";
-    export default {
-        data() {
-            return {
+	export default {
+		data() {
+			return {
+				dogNames: [],
+				dogNamesSort: [],
+				dogSort: false,
+				newDogName: '',
                 tablebeachcamp: beachcamp.names,
                 tablemountaincamp: mountaincamp.names
-            };
-        }
-    };
+			};
+		},
+		mounted() {
+			// this.getFbDbNames('place');
+			this.onFbDbNames('place');
+		},
+		methods: {
+			getFbDbNames(refName) {
+				fbDb.ref(refName).child('names').get().then((snapshot) => {
+					if (snapshot.exists()) {
+						if (refName === 'place') {
+							this.dogNames = snapshot.val();
+							this.sortDogNames();
+						}
+					}
+				});
+			},
+			onFbDbNames(refName) {
+				fbDb.ref(refName).child('names').get().then((snapshot) => {
+					if (snapshot.exists()) {
+						if (refName === 'place') {
+							this.dogNames = snapshot.val();
+							this.sortDogNames();
+						}
+					}
+				});
+			},
+			sortDogNames() {
+				this.dogNamesSort = this.dogNames.slice(); // copy
+				if (this.dogSort) this.dogNamesSort.sort();
+			},
+			submitDogName() {
+				let newDogNames = this.dogNames.slice(); // copy
+				newDogNames.push(this.newDogName);
+				fbDb.ref('dogs').child('names')	.set(newDogNames); // overwrite
+				fbDb.ref('dogs').child('size').set(newDogNames.length);
+			},
+		},
+	};
 </script>

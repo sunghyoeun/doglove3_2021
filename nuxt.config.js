@@ -18,13 +18,20 @@ module.exports = {
       {
         rel: "stylesheet", 
         href: "https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css"
-      }
+      },
+      {
+				rel: 'stylesheet',
+				href: 'https://uicdn.toast.com/chart/latest/toastui-chart.min.css',
+			},
     ],
     script : [
       {
         defer:"",
         src:"https://use.fontawesome.com/releases/v5.15.3/js/all.js"
-      }
+      },
+      {
+				src: 'https://uicdn.toast.com/chart/latest/toastui-chart.min.js',
+			},
     ]
   },
   
@@ -50,6 +57,9 @@ module.exports = {
       }
     }
   },
-  plugins: [{src: '~/plugins/firebaseDb.js'}],
+  plugins: [
+    { src: '~/plugins/firebaseDb.js'},
+    { src: '~/plugins/toastuiChart.js', mode: 'client' },
+  ],
 }
 

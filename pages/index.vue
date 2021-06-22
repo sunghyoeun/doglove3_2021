@@ -1,24 +1,23 @@
-<template>
-  <div>
-    <section class="hero is-primary">
+<template >
+  <div >
+    <section class="hero is-primary" style="text-align: center;">
       <div class="hero-body">
-        <p class="title">
-          <i class="fas fa-caravan"></i> 캠핑장 찾기
-        </p>
+        <p class="title"><i class="fas fa-caravan" ></i> 캠핑장 찾기</p>
         <p class="subtitle">
           나만의 캠핑장 정보를 볼 수 있는 사이트
         </p>
       </div>
     </section>
     <figure class="image is-3by1"><img src="~assets/camping.png" alt=""></figure>
-    <div class = "columns">
-      <div class="column">
-        
+    <hr/>
+    <div class = "columns" >
+      <div style="width: 10%;"></div>
+      <div class="column" >
         <article class="message">
-          <div class="message-header">
-            <p>캠핑의 의미</p>
+          <div class="message-header" >
+            <p >캠핑의 의미</p>
           </div>
-          <div class="message-body">
+          <div class="message-body" >
             보통 캠프라고 약칭하며, 야영(野營)이라고도 한다. 
             텐트 혹은 간단한 임시 건물 등에서 야외의 일시적인 생활을 하는 일로 고정적인 방갈로(bungalow)나 오두막집(Hutte) 등을 이용하는 것,
             또 등산의 경우에 간단한 첼트자크(Zeltsack) 등에서 비바크(Biwak)하는 것, 적설기에 설동(雪洞)이나 이글루(igloo)를 이용하는 것, 
@@ -86,6 +85,7 @@
           </table>
         </article>
       </div>
+      <div style="width: 10%;"></div>
     </div>
   </div>
 </template>
