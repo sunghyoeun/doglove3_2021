@@ -2,7 +2,7 @@
 	<div>
 		<section class="hero is-light">
 			<div class="hero-body">
-				<p class="title" style="text-align: center;"><i class="fas fa-dog"></i> 이달의 추천 캠핑장</p>
+				<p class="title" style="text-align: center;"><i class="fas fa-star"></i> 이달의 추천 캠핑장<i class="fas fa-star"></i> </p>
 				<p class="subtile" style="text-align: center;">
 					외부 서비스인 Firebase가 함께 합니다.
 				</p>
@@ -10,11 +10,11 @@
 		</section>
 		<hr />
 		<section class="box" style="text-align: center;">
-			<form @submit.prevent="submitDogName">
+			<form @submit.prevent="submitCampingName">
 				<div class="field">
 					<label class="label">추천하고 싶은 캠핑장</label>
 					<div class="control">
-						<input style="width: 6cm; height: 0.8;"  type="text" v-model="newDogName" />
+						<input style="width: 6cm; height: 0.8;"  type="text" v-model="newcampingNames" />
 						<button class="button is-link" type="submit" >추천</button>
 					</div>
 					<p class="help is-success">
@@ -28,7 +28,7 @@
 			<div class="column" style="text-align: center;">
 				<div class="field">
 					<label class="checkbox">
-						<input type="checkbox" v-model="dogSort" @change="sortDogNames" /> 이달의 캠핑 <strong>정렬하기</strong>
+						<input type="checkbox" v-model="campingSort" @change="sortCampingNames" /> 이달의 캠핑 <strong>정렬하기</strong>
 					</label>
 				</div>
 				<table class="table is-striped is-hoverable is-fullwidth">
@@ -39,10 +39,10 @@
 						</tr>
 					</thead>
 					<tbody>
-						<template v-for="pos in dogNamesSort.length">
+						<template v-for="pos in campingNamesSort.length">
 							<tr :key="pos">
 								<td>{{ pos }}</td>
-								<td>{{ dogNamesSort[pos - 1] }}</td>
+								<td>{{ campingNamesSort[pos - 1] }}</td>
 							</tr>
 						</template>
 					</tbody>
@@ -58,17 +58,13 @@
 </template>
 <script>
 	import fbDb from '~/plugins/firebaseDb';
-    import beachcamp from "~/static/beachcamp.json";
-    import mountaincamp from "~/static/mountaincamp.json";
 	export default {
 		data() {
 			return {
-				dogNames: [],
-				dogNamesSort: [],
-				dogSort: false,
-				newDogName: '',
-                tablebeachcamp: beachcamp.names,
-                tablemountaincamp: mountaincamp.names
+				campingNames: [],
+				campingNamesSort: [],
+				campingSort: false,
+				newcampingNames: '',
 			};
 		},
 		mounted() {
@@ -80,8 +76,8 @@
 				fbDb.ref(refName).child('names').get().then((snapshot) => {
 					if (snapshot.exists()) {
 						if (refName === 'place') {
-							this.dogNames = snapshot.val();
-							this.sortDogNames();
+							this.campingNames = snapshot.val();
+							this.sortCampingNames();
 						}
 					}
 				});
@@ -90,21 +86,21 @@
 				fbDb.ref(refName).child('names').get().then((snapshot) => {
 					if (snapshot.exists()) {
 						if (refName === 'place') {
-							this.dogNames = snapshot.val();
-							this.sortDogNames();
+							this.campingNames = snapshot.val();
+							this.sortCampingNames();
 						}
 					}
 				});
 			},
-			sortDogNames() {
-				this.dogNamesSort = this.dogNames.slice(); // copy
-				if (this.dogSort) this.dogNamesSort.sort();
+			sortCampingNames() {
+				this.campingNamesSort = this.campingNames.slice(); // copy
+				if (this.campingSort) this.campingNamesSort.sort();
 			},
-			submitDogName() {
-				let newDogNames = this.dogNames.slice(); // copy
-				newDogNames.push(this.newDogName);
-				fbDb.ref('dogs').child('names')	.set(newDogNames); // overwrite
-				fbDb.ref('dogs').child('size').set(newDogNames.length);
+			submitCampingName() {
+				let newcampingNames = this.campingNames.slice(); // copy
+				newDogNames.push(this.newcampingNames);
+				fbDb.ref('dogs').child('names')	.set(newcampingNames); // overwrite
+				fbDb.ref('dogs').child('size').set(newcampingNames.length);
 			},
 		},
 	};

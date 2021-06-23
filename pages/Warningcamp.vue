@@ -1,9 +1,9 @@
 <template>
     <div>
-        <section class="hero is-success" style="text-align: center;">
+        <section class="hero is-danger" style="text-align: center;">
             <div class="hero-body">
                 <p class="title">
-					<i class="fas fa-exclamation-triangle"></i>캠핑장 위험요소
+					<i class="fas fa-exclamation-triangle"></i> 캠핑장 위험요소
 				</p>
                 <p class="subtile">
 					안전사고 상황을 알려주는 통계를 시각적으로 보여줍니다.
@@ -44,7 +44,7 @@
 <script>
 	import toastuiChart from '~/plugins/toastuiChart';
 	let showChart = false;
-	const dogCaringMoney = {
+	const campCaringMoney = {
 		categories: [
 			'2015년',
 			'2016년',
@@ -60,7 +60,7 @@
 			}
 		],
 	};
-	const dogStartYear = {
+	const campStartYear = {
 		categories: ['안전사고'],
 		series: [
 			{
@@ -107,8 +107,8 @@
 		},
 		mounted() {
 			if (!showChart && process.client) {
-				if (!toastuiChart('bar', 'lineChart', dogCaringMoney)) return;
-				if (!toastuiChart('pie', 'pieChart', dogStartYear)) return;
+				if (!toastuiChart('bar', 'lineChart', campCaringMoney)) return;
+				if (!toastuiChart('pie', 'pieChart', campStartYear)) return;
 				showChart = true;
 			}
 		},

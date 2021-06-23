@@ -1,19 +1,19 @@
 <template>
     <div>
-        <section class="hero is-warning">
+        <section class="hero is-warning" style="text-align: center;">
             <div class="hero-body">
-                <p class="title"><i class="fas fa-user-check"></i>캠핌 필수품</p>
+                <p class="title"><i class="fas fa-user-check"></i> 캠핑시 필수품</p>
                 <p class="subtile">
                     캠핑시 필요한 물건
                 </p>
             </div>
         </section>
         <hr />
-        <section class="columns">
-            <div style="width: 5%;"></div>
-            <div class="column">
+        <section class="columns" >
+            <div style="width: 10%;"></div>
+            <div class="column" >
                 <table class="table">
-                    <thead>
+                    <thead style="text-align: center;">
                         <th>번호</th>
                         <th>Tent 필수품</th>
                         <th>중요도</th>
@@ -47,7 +47,7 @@
             </div>
             <div class="column">
                 <table class="table">
-                    <thead>
+                    <thead style="text-align: center;">
                         <th>번호</th>
                         <th>Kitchen 필수품</th>
                         <th>중요도</th>
@@ -80,8 +80,8 @@
                 </div>
             </div>
             <div class="column">
-                <table class="table">
-                    <thead>
+                <table class="table" >
+                    <thead style="text-align: center;">
                         <th>번호</th>
                         <th>있으면 좋은 물건</th>
                         <th>중요도</th>
@@ -113,7 +113,7 @@
                     <a class="button is-primary is-small" href="https://www.gocamping.or.kr/">go camping</a>
                 </div>
             </div>
-            <div style="width: 5%;"></div>
+            <div style="width: 10%;"></div>
         </section>
     </div>
  </template>
@@ -131,7 +131,6 @@
              'is-danger',
           ];
           return {
-             dogNameField: 'dogName',
              colors: colors,
              colorSize: colors.length,
           };

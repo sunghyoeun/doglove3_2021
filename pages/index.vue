@@ -2,16 +2,16 @@
   <div >
     <section class="hero is-primary" style="text-align: center;">
       <div class="hero-body">
-        <p class="title"><i class="fas fa-caravan" ></i> 캠핑장 찾기</p>
+        <p class="title"><i class="fas fa-caravan" ></i> 가자! 캠핑</p>
         <p class="subtitle">
-          나만의 캠핑장 정보를 볼 수 있는 사이트
+          캠핑에 관련된 모든것을 알 수 있는 사이트
         </p>
       </div>
     </section>
-    <figure class="image is-3by1"><img src="~assets/camping.png" alt=""></figure>
+    <figure class="image is-3by1"><img src="~assets/camping.jpg" alt=""></figure>
     <hr/>
     <div class = "columns" >
-      <div style="width: 10%;"></div>
+      <div style="width: 7%;"></div>
       <div class="column" >
         <article class="message">
           <div class="message-header" >
@@ -85,7 +85,7 @@
           </table>
         </article>
       </div>
-      <div style="width: 10%;"></div>
+      <div style="width: 7%;"></div>
     </div>
   </div>
 </template>
