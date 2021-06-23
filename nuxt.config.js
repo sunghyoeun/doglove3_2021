@@ -3,14 +3,14 @@ module.exports = {
   ** Headers of the page
   */
   head: {
-    title: '캠핑장 찾기',
+    title: '캠핑가기 전 이것저것 알기',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { 
         hid: 'description', 
         name: 'description', 
-        content: '내가 원하는 캠핑장 찾기'
+        content: '캠핑초보를 위한 캠핑에 관한 여러가지 정보들'
       }
     ],
     link: [
