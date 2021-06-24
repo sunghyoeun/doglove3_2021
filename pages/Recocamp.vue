@@ -99,7 +99,7 @@
 			submitCampingName() {
 				let newcampingNames = this.campingNames.slice(); // copy
 				newDogNames.push(this.newcampingNames);
-				fbDb.ref('dogs').child('names')	.set(newcampingNames); // overwrite
+				fbDb.ref('dogs').child('names').set(newcampingNames); // overwrite
 				fbDb.ref('dogs').child('size').set(newcampingNames.length);
 			},
 		},

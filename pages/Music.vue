@@ -59,7 +59,7 @@
   import toastuiChart from '~/plugins/toastuiChart';
   let showChart = false;
   
-  const dogStartYear = {
+  const musicStart = {
 		categories: ['선호 장르'],
 		series: [
 			{
@@ -151,7 +151,7 @@
     },
     mounted() {
 			if (!showChart && process.client) {
-				if (!toastuiChart('pie', 'pieChart', dogStartYear)) return;
+				if (!toastuiChart('pie', 'pieChart', musicStart)) return;
 				showChart = true;
 			}
 		},
