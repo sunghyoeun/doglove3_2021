@@ -23,7 +23,7 @@
                             <tr :key="pos">
                                 <td>{{ pos }}</td>
                                 <td>
-                                    <button :class="`button ${colors[(pos - 1) % colorSize]} is-light`">
+                                    <button :class="`button ${colors[(pos - 1) % colorSize]} is-light`" @click="say(tableTentKeys[pos-1])">
                                     {{ tableTentKeys[pos - 1] }}
                                     </button>
                                 </td>
@@ -57,7 +57,7 @@
                             <tr :key="pos">
                                 <td>{{ pos }}</td>
                                 <td>
-                                    <button :class="`button ${colors[(pos - 1) % colorSize]} is-light`">
+                                    <button :class="`button ${colors[(pos - 1) % colorSize]} is-light`" @click="say(tableKitchenKeys[pos-1]) " >
                                     {{ tableKitchenKeys[pos - 1]}}
                                     </button>
                                 </td>
@@ -91,7 +91,7 @@
                             <tr :key="pos">
                                 <td>{{ pos }}</td>
                                 <td>
-                                    <button :class="`button ${colors[(pos - 1) % colorSize]} is-light`">
+                                    <button :class="`button ${colors[(pos - 1) % colorSize]} is-light`" @click="say(tableUseKeys[pos-1]) ">
                                     {{ tableUseKeys[pos - 1]}}
                                     </button>
                                 </td>
@@ -135,6 +135,11 @@
              colorSize: colors.length,
           };
        },
+       methods: {
+           say: function (tableTentBreeds) {
+               alert(tableTentBreeds)
+            }
+        },
        async asyncData() {
           const Useful = await axios.get('https://raw.githubusercontent.com/sunghyoeun/doglove3_2021/master/static/warning.json');
           return {
@@ -147,4 +152,5 @@
           };
        },
     };
+    
  </script>

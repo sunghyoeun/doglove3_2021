@@ -49,9 +49,7 @@
     import photojson from "~/static/photo.json";
     export default {
         data() {
-            
 			return {
-				
                 photo: photojson.images,
                 content: photojson.names,
                 link: photojson.link
